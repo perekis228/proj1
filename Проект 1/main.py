@@ -19,6 +19,8 @@ def main():
     # Plot the data
     dplt.create_and_save_plot(stock_data, ticker, period)
 
+    dd.calculate_and_display_average_price(stock_data)
+
 
 if __name__ == "__main__":
     main()
