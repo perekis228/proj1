@@ -18,3 +18,14 @@ def calculate_and_display_average_price(data):
     '''Вычисляет и выводит среднюю цену закрытия акций за заданный период'''
     average_price = data['Close'].mean()
     print(f"Средняя цена: {average_price:.2f}")
+
+
+def notify_if_strong_fluctuations(data, threshold):
+    '''Анализирует данные и уведомляет пользователя, если цена акций колебалась более чем на заданный процент за период'''
+    price_changes = data['Close'].pct_change()
+    max_change = price_changes.abs().max()
+
+    if max_change > threshold:
+        print(f"Изменение цены выше порога: {max_change}!")
+    else:
+        print(f"Изменения цены выше порога не замечено.")
