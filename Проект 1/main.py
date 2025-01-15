@@ -26,5 +26,11 @@ def main():
     # Print if the price is above the threshold
     dd.notify_if_strong_fluctuations(stock_data, threshold)
 
+    # Make CSV
+    make_csv = input("Хотите выгрузить результат в csv файл(y/n)? ")
+    if make_csv == 'y':
+        csv_name = input("Введите название файла: ")
+        dd.export_data_to_csv(stock_data, csv_name)
+
 if __name__ == "__main__":
     main()

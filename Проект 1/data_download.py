@@ -1,4 +1,5 @@
 import yfinance as yf
+import csv
 
 
 def fetch_stock_data(ticker, period='1mo'):
@@ -29,3 +30,8 @@ def notify_if_strong_fluctuations(data, threshold):
         print(f"Изменение цены выше порога: {max_change}!")
     else:
         print(f"Изменения цены выше порога не замечено.")
+
+def export_data_to_csv(data, filename):
+    '''Позволяет сохранять загруженные данные об акциях в CSV файл'''
+    data.to_csv(filename+'.csv', index=False)
+    print("CSV файл сохранён")

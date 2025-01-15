@@ -6,3 +6,6 @@ task2:
 ![task2_1.png](task2_1.png)
 2)
 ![task2_2.png](task2_2.png)
+
+task3:
+![task_3.png](task_3.png)
