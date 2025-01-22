@@ -17,8 +17,13 @@ def main():
     # Add moving average to the data
     stock_data = dd.add_moving_average(stock_data)
 
-    # Plot the data
-    dplt.create_and_save_plot(stock_data, ticker, period)
+    # Plot the data, rsi, macd
+    rsi = input("Нужен ли график RSI(y/n)?")
+    rsi = True if rsi=='y' else False
+
+    macd = input("Нужен ли график MACD(y/n)?")
+    macd = True if macd == 'y' else False
+    dplt.create_and_save_plot(data=stock_data, ticker=ticker, period=period, rsi=rsi, macd=macd)
 
     # Print the average price
     dd.calculate_and_display_average_price(stock_data)
